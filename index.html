@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N Sarkar Associates – Legal, Tax, VAT & Corporate Services</title>  <!-- Google Font -->  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f5f7fa;
+      color:#333;
+      line-height:1.6
+    }
+    a{text-decoration:none;color:inherit}
+
+    /* Header */
+    header{
+      background:linear-gradient(135deg,#0b2c4d,#123e6b);
+      color:#fff;
+      padding:25px 0
+    }
+    .container{width:90%;max-width:1200px;margin:auto}
+    header h1{font-size:30px;font-weight:600}
+    header p{opacity:.9}
+
+    /* Navigation */
+    nav{
+      background:#091f36;
+      position:sticky;
+      top:0;
+      z-index:1000
+    }
+    nav ul{
+      list-style:none;
+      display:flex;
+      justify-content:center
+    }
+    nav li a{
+      color:#fff;
+      padding:14px 20px;
+      display:block;
+      font-weight:500;
+      transition:.3s
+    }
+    nav li a:hover{background:#123e6b}
+
+    /* Hero */
+    .hero{
+      padding:90px 0;
+      text-align:center;
+      color:#fff;
+      background:linear-gradient(rgba(11,44,77,.85),rgba(11,44,77,.85)),url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f');
+      background-size:cover;
+      background-position:center
+    }
+    .hero h2{font-size:38px;margin-bottom:10px}
+    .hero p{max-width:700px;margin:auto}
+
+    /* Sections */
+    section{padding:70px 0}
+    h3{text-align:center;margin-bottom:40px;color:#0b2c4d;font-size:28px}
+
+    /* Services */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px
+    }
+    .service{
+      background:#fff;
+      border-radius:12px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 15px 40px rgba(0,0,0,.08);
+      cursor:pointer;
+      transform:translateY(30px);
+      opacity:0;
+      transition:all .6s ease
+    }
+    .service.active{
+      transform:translateY(0);
+      opacity:1
+    }
+    .service:hover{
+      transform:translateY(-8px) scale(1.02)
+    }
+    .service h4{margin-bottom:10px;color:#0b2c4d}
+
+    /* Contact */
+    .contact-box{
+      background:#fff;
+      padding:35px;
+      border-radius:12px;
+      box-shadow:0 15px 40px rgba(0,0,0,.08);
+      max-width:700px;
+      margin:auto
+    }
+    .contact-box p{margin-bottom:10px}
+
+    /* Footer */
+    footer{
+      background:#091f36;
+      color:#fff;
+      text-align:center;
+      padding:18px 0;
+      font-size:14px
+    }
+  </style></head>
+<body><header>
+  <div class="container">
+    <h1>N Sarkar Associates</h1>
+    <p>Legal, Tax, VAT & Corporate Services</p>
+  </div>
+</header><nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav><div class="hero" id="home">
+  <div class="container">
+    <h2>Premium Legal & Corporate Solutions</h2>
+    <p>Trusted advisory services with professionalism, integrity and experience.</p>
+  </div>
+</div><section id="about">
+  <div class="container">
+    <h3>About Our Firm</h3>
+    <p style="text-align:center;max-width:850px;margin:auto">
+      N Sarkar Associates is a Dhaka-based professional law firm providing legal, tax, VAT and corporate services to individuals and businesses with reliability and confidentiality.
+    </p>
+  </div>
+</section><section id="services">
+  <div class="container">
+    <h3>Our Professional Services</h3>
+    <div class="services">
+      <div class="service" data-title="Legal Services" data-desc="Comprehensive civil, criminal, corporate and commercial legal advisory, drafting and representation services delivered with professionalism and confidentiality.">
+        <h4>Legal Services</h4><p>Civil, criminal, corporate & commercial advisory.</p>
+      </div>
+      <div class="service" data-title="Income Tax Services" data-desc="Income tax return filing, tax planning, assessment, appeal, audit support and representation before tax authorities.">
+        <h4>Income Tax</h4><p>Return filing, assessment & appeal.</p>
+      </div>
+      <div class="service" data-title="VAT Services" data-desc="VAT registration, Mushak returns, VAT compliance management, audit support and consultancy as per Bangladesh VAT laws.">
+        <h4>VAT Services</h4><p>VAT registration & Mushak compliance.</p>
+      </div>
+      <div class="service" data-title="Corporate Services" data-desc="Company formation, RJSC filing, trade license, statutory compliance, corporate secretarial and advisory services.">
+        <h4>Corporate Services</h4><p>RJSC, trade license & compliance.</p>
+      </div>
+    </div>
+  </div>
+</section><!-- Service Modal --><div id="serviceModal" style="position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:2000">
+  <div style="background:#fff;max-width:520px;width:90%;border-radius:14px;padding:30px;animation:pop .4s ease">
+    <h3 id="modalTitle" style="margin-bottom:10px;color:#0b2c4d"></h3>
+    <p id="modalDesc"></p>
+    <button onclick="closeModal()" style="margin-top:20px;padding:10px 18px;border:none;background:#0b2c4d;color:#fff;border-radius:8px;cursor:pointer">Close</button>
+  </div>
+</div><style>
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+</style><section id="contact">
+  <div class="container">
+    <h3>Contact Information</h3>
+    <div class="contact-box">
+      <p><strong>Address:</strong> Fahima Tower (6th Floor), Room 6D, 42/43 Purana Paltan, Dhaka-1000</p>
+      <p><strong>Phone:</strong> 01637708664</p>
+      <p><strong>Email:</strong> digantosarker307@gmail.com</p>
+      <p><strong>Google Map:</strong> <a href="https://maps.app.goo.gl/gEfzLU33biTejEut6" target="_blank">View Location</a></p>
+    </div>
+  </div>
+</section><footer>
+  <p>© 2026 N Sarkar Associates. All Rights Reserved.</p>
+</footer><!-- WhatsApp Floating Button --><a href="https://wa.me/8801637708664" target="_blank" style="position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:500;box-shadow:0 10px 25px rgba(0,0,0,.2);z-index:1500">WhatsApp</a>
+
+<script>
+  const services = document.querySelectorAll('.service');
+  window.addEventListener('scroll',()=>{
+    const trigger = window.innerHeight - 100;
+    services.forEach(service=>{
+      const top = service.getBoundingClientRect().top;
+      if(top < trigger){service.classList.add('active')}
+    })
+  });
+
+  // Service modal click animation
+  services.forEach(s=>{
+    s.addEventListener('click',()=>{
+      document.getElementById('modalTitle').innerText = s.dataset.title;
+      document.getElementById('modalDesc').innerText = s.dataset.desc;
+      document.getElementById('serviceModal').style.display='flex';
+    })
+  });
+  function closeModal(){document.getElementById('serviceModal').style.display='none'}
+</script></body>
+</html>
